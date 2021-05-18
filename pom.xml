@@ -20,6 +20,7 @@
     <modules>
         <module>lamp-demo</module>
         <module>lamp-example</module>
+        <module>lamp-noneMultipleDataSources</module>
     </modules>
 
     <properties>
