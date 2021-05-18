@@ -1,6 +1,6 @@
-本模块仅仅演示None模式，多数据源功能。 适用于不同mapper包，调用不同的数据源的场景。
+本模块仅仅演示None模式，多数据源功能。 适用于不同mapper包，调用不同的数据源的场景。通常用于定时任务、从不同数据源同步数据等场景下。
 
-通常用于定时任务、从不同数据源同步数据等场景下。
+测试前，请将`application.yml`的配置，导入（新建）nacos的 lamp-noneMultipleDataSources-server.yml 中.并确保mysql.yml中 lamp.database.multi-tenant-type=NONE。
 
 重点看以下类和配置文件
 - MasterDatabaseAutoConfiguration：第一个数据源的配置类
