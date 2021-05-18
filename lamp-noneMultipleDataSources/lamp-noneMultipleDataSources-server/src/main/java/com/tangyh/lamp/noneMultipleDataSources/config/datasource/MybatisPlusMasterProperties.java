@@ -1,6 +1,5 @@
 package com.tangyh.lamp.noneMultipleDataSources.config.datasource;
 
-import com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.core.toolkit.GlobalConfigUtils;
@@ -23,8 +22,8 @@ import java.util.stream.Stream;
  * @date 2021/5/18 8:31 下午
  * @create [2021/5/18 8:31 下午 ] [tangyh] [初始创建]
  */
-@ConfigurationProperties(prefix = "mybatis-plus-slave")
-public class MybatisPlusSlaveProperties {
+@ConfigurationProperties(prefix = "mybatis-plus-master")
+public class MybatisPlusMasterProperties {
 
     private static final ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
 

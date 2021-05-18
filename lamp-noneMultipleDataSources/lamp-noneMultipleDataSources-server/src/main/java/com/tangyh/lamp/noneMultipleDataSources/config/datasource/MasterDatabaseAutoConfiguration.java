@@ -1,5 +1,6 @@
 package com.tangyh.lamp.noneMultipleDataSources.config.datasource;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ArrayUtil;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import com.baomidou.mybatisplus.autoconfigure.ConfigurationCustomizer;
@@ -62,7 +63,7 @@ public class MasterDatabaseAutoConfiguration extends BaseDatabaseConfiguration {
      */
     public static final String DATABASE_PREFIX = "master";
 
-    public MasterDatabaseAutoConfiguration(MybatisPlusProperties properties,
+    public MasterDatabaseAutoConfiguration(MybatisPlusMasterProperties properties,
                                            DatabaseProperties databaseProperties,
                                            ObjectProvider<Interceptor[]> interceptorsProvider,
                                            ObjectProvider<TypeHandler[]> typeHandlersProvider,
@@ -72,12 +73,11 @@ public class MasterDatabaseAutoConfiguration extends BaseDatabaseConfiguration {
                                            ObjectProvider<List<ConfigurationCustomizer>> configurationCustomizersProvider,
                                            ObjectProvider<List<MybatisPlusPropertiesCustomizer>> mybatisPlusPropertiesCustomizerProvider,
                                            ApplicationContext applicationContext) {
-        super(properties, databaseProperties, interceptorsProvider, typeHandlersProvider,
+        super(BeanUtil.toBean(properties, MybatisPlusProperties.class), databaseProperties, interceptorsProvider, typeHandlersProvider,
                 languageDriversProvider, resourceLoader, databaseIdProvider,
                 configurationCustomizersProvider, mybatisPlusPropertiesCustomizerProvider, applicationContext);
         log.debug("检测到 lamp.database.multiTenantType!=DATASOURCE，加载了 NoneMultipleDataSourcesDatabaseAutoConfiguration");
     }
-
 
     @Bean(DATABASE_PREFIX + "SqlSessionTemplate")
     public SqlSessionTemplate getSqlSessionTemplate(@Qualifier(DATABASE_PREFIX + "SqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
