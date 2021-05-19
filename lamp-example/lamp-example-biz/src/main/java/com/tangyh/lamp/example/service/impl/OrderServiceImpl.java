@@ -1,6 +1,5 @@
 package com.tangyh.lamp.example.service.impl;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tangyh.basic.annotation.echo.EchoResult;
@@ -36,7 +35,6 @@ import java.util.Set;
  */
 @Slf4j
 @Service
-@DS("#thread.tenant")
 @AllArgsConstructor
 public class OrderServiceImpl extends SuperCacheServiceImpl<OrderMapper, Order> implements OrderService {
 

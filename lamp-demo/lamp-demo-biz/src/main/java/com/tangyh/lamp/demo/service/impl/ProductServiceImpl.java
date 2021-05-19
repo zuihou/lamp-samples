@@ -1,6 +1,5 @@
 package com.tangyh.lamp.demo.service.impl;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.tangyh.basic.base.service.SuperServiceImpl;
 import com.tangyh.lamp.demo.dao.ProductMapper;
 import com.tangyh.lamp.demo.entity.Product;
@@ -20,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @Service
-@DS("#thread.tenant")
 public class ProductServiceImpl extends SuperServiceImpl<ProductMapper, Product> implements ProductService {
 
     @Override
