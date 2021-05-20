@@ -21,6 +21,7 @@
         <module>lamp-demo</module>
         <module>lamp-example</module>
         <module>lamp-noneMultipleDataSources</module>
+        <module>lamp-seata</module>
     </modules>
 
     <properties>

@@ -1,6 +1,5 @@
 package com.tangyh.lamp;
 
-import com.alibaba.cloud.seata.feign.SeataFeignClientAutoConfiguration;
 import com.tangyh.basic.security.annotation.EnableLoginArgResolver;
 import com.tangyh.basic.validator.annotation.EnableFormValidator;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +21,7 @@ import static com.tangyh.lamp.common.constant.BizConstant.UTIL_PACKAGE;
 /**
  * @author zuihou
  */
-@SpringBootApplication(exclude = {SeataFeignClientAutoConfiguration.class})
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
 @ComponentScan({

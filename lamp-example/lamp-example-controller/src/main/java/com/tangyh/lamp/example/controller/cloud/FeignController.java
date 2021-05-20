@@ -1,12 +1,12 @@
 package com.tangyh.lamp.example.controller.cloud;
 
+import cn.hutool.core.io.IoUtil;
 import com.tangyh.basic.base.R;
 import com.tangyh.lamp.example.api.DemoFeign2Api;
 import com.tangyh.lamp.example.api.DemoFeign3Api;
 import com.tangyh.lamp.example.api.DemoFeignApi;
 import com.tangyh.lamp.example.dto.RestTestDTO;
 import com.tangyh.lamp.example.entity.Order;
-import io.seata.common.util.IOUtil;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -89,7 +89,7 @@ public class FeignController {
         } catch (IOException e) {
             log.error("createFileItem error", e);
         } finally {
-            IOUtil.close(fis);
+            IoUtil.close(fis);
         }
         return item;
     }
