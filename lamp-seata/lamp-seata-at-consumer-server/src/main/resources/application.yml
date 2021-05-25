@@ -27,6 +27,7 @@ lamp:
     isNotWrite: false
     isBlockAttack: false
     isSeata: true
+    p6spy: true
     id-type: HU_TOOL
     hutoolId:
       workerId: 0
@@ -38,6 +39,7 @@ lamp:
       epochStr: '2020-09-15'
       boost-power: 3
       padding-factor: 50
+
 # mysql 通用配置
 spring:
   autoconfigure:
@@ -112,7 +114,7 @@ mybatis-plus:
 seata:
   enabled: ${lamp.database.isSeata}
   enableAutoDataSourceProxy: true
-  tx-service-group: lamp_admin_seata_tx_group
+  tx-service-group: lamp_cloud_seata_tx_group
   registry:
     type: nacos
     nacos:

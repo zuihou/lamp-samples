@@ -27,6 +27,7 @@ lamp:
     isNotWrite: false
     isBlockAttack: false
     isSeata: true
+    p6spy: true
     id-type: HU_TOOL
     hutoolId:
       workerId: 0
