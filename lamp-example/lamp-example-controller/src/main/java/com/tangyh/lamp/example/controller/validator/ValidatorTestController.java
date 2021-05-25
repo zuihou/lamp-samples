@@ -40,6 +40,11 @@ import static com.tangyh.lamp.common.constant.SwaggerConstants.PARAM_TYPE_QUERY;
 @Validated
 public class ValidatorTestController {
 
+    /**
+     * 用 postman post 方式调用： http://ip:port/form/validator/validator/postJson 看返回结果
+     * <p>
+     * 想要配合前端使用，参考lamp-web-plus的前端formValidateService.ts源码
+     */
     @PostMapping(value = "/postJson")
     public R postJson(@ApiIgnore @LoginUser SysUser user, @Validated @RequestBody Order order) {
         log.info("order={}", order);
@@ -47,13 +52,22 @@ public class ValidatorTestController {
     }
 
 
+    /**
+     * 用 postman post 方式调用： http://ip:port/form/validator/validator/postFrom 看返回结果
+     * <p>
+     * 想要配合前端使用，参考lamp-web-plus的前端formValidateService.ts源码
+     */
     @PostMapping(value = "/postFrom")
     public R postFrom(@Valid Order order) {
         log.info("user={}", order);
         return R.success(order);
     }
 
-
+    /**
+     * 用 postman post 方式调用： http://ip:port/form/validator/validator/upload 看返回结果
+     * <p>
+     * 想要配合前端使用，参考lamp-web-plus的前端formValidateService.ts源码
+     */
     @ApiOperation(value = "附件上传", notes = "附件上传")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "isSingle", value = "是否单文件", dataType = DATA_TYPE_BOOLEAN, paramType = PARAM_TYPE_QUERY),
