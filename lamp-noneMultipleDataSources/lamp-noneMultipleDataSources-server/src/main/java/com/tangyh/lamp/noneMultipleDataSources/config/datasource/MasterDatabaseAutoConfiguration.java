@@ -1,7 +1,6 @@
 package com.tangyh.lamp.noneMultipleDataSources.config.datasource;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.util.ArrayUtil;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import com.baomidou.mybatisplus.autoconfigure.ConfigurationCustomizer;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties;
@@ -103,7 +102,7 @@ public class MasterDatabaseAutoConfiguration extends BaseDatabaseConfiguration {
     @Primary
     @Bean(name = DATABASE_PREFIX + "DataSource")
     public DataSource dataSource(@Qualifier(DATABASE_PREFIX + "DruidDataSource") DataSource dataSource) {
-        if (ArrayUtil.contains(DEV_PROFILES, this.profiles)) {
+        if (databaseProperties.getP6spy()) {
             return new P6DataSource(dataSource);
         } else {
             return dataSource;
