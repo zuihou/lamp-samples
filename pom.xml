@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tangyh.lamp</groupId>
-    <artifactId>lamp-examples</artifactId>
+    <artifactId>lamp-samples</artifactId>
     <version>3.2.2</version>
     <packaging>pom</packaging>
     <url>https://gitee.com/zuihou111/lamp-cloud</url>
     <name>${project.artifactId}</name>
-    <description>lamp-examples</description>
+    <description>lamp-samples</description>
     <developers>
         <developer>
             <name>zuihou</name>
