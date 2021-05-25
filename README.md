@@ -45,3 +45,28 @@
 - lamp-noneMultipleDataSources: None模式配置多数据源，实现不同package下的Mapper调用不同的数据源（且支持Spring本地事务）
 - lamp-example： 缓存(lamp-cache-stater)使用示例、自动回显(lamp-echo-stater)示例、URI权限示例、前后端统一表单验证示例等
 
+> 若您对本项目还有什么不明白的地方，或者想要实现的功能，可以留言或者提issue，我会继续完善本项目的示例工程
+
+# lamp 会员版项目演示地址
+
+- lamp-web-plus演示地址： http://tangyh.top:3100
+- lamp-web演示地址： http://tangyh.top:10000/lamp-web
+- lamp-web-beautiful演示地址： http://tangyh.top:180
+- 以下内置账号仅限于内置的0000租户
+- 平台管理员： lamp_pt/lamp (内置给公司内部运营人员使用)
+- 超级管理员： lamp/lamp
+- 普通管理员： general/lamp
+- 普通账号： normal/lamp
+
+# 快速上手
+
+- 入门到精通，参考文档： https://www.kancloud.cn/zuihou/zuihou-admin-cloud
+- 发现bug和建议，请提交issue： https://github.com/zuihou/lamp-cloud/issues
+- 常见问题，请参考Discussions： https://github.com/zuihou/lamp-cloud/discussions
+
+# 会员版
+
+本项目分为开源版和会员版，github和gitee上能搜索到的为开源版本，遵循Apache协议。 会员版源码在私有gitlab托管，购买后开通账号。
+
+会员版和开源版区别请看：[会员版](https://www.kancloud.cn/zuihou/zuihou-admin-cloud/2074547)
+
