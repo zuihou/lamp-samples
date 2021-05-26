@@ -2,9 +2,11 @@ package com.tangyh.lamp.example.controller.cloud;
 
 import cn.hutool.core.io.IoUtil;
 import com.tangyh.basic.base.R;
+import com.tangyh.lamp.demo.entity.Product;
 import com.tangyh.lamp.example.api.DemoFeign2Api;
 import com.tangyh.lamp.example.api.DemoFeign3Api;
 import com.tangyh.lamp.example.api.DemoFeignApi;
+import com.tangyh.lamp.example.controller.TestUtil;
 import com.tangyh.lamp.example.dto.RestTestDTO;
 import com.tangyh.lamp.example.entity.Order;
 import io.swagger.annotations.Api;
@@ -50,6 +52,19 @@ public class FeignController {
     private final DemoFeignApi demoFeignApi;
     private final DemoFeign2Api demoFeign2Api;
     private final DemoFeign3Api demoFeign3Api;
+    private final TestUtil testUtil;
+
+
+    @GetMapping("/get222")
+    public R<String> get222(@RequestParam("key") String key) {
+        return testUtil.test2(key);
+    }
+
+    @PostMapping("/post222")
+    public R<?> post2222(@RequestBody Product data) {
+        return testUtil.test(data);
+    }
+
 
     /**
      * @param file     文件

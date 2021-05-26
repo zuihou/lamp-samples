@@ -31,4 +31,5 @@ public interface DemoTestApi {
      */
     @PostMapping("/save")
     R<Product> save(@RequestBody Product data);
+
 }
