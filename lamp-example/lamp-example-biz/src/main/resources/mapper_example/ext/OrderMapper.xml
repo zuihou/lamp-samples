@@ -6,7 +6,7 @@
     <select id="find" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from m_order
+        from b_order
         <where>
             <if test="data.code != null and data.code != ''">
                 and code like #{data.code,typeHandler=fullLike}
@@ -26,7 +26,27 @@
     <select id="findPage" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from m_order ${ew.customSqlSegment}
+        from b_order ${ew.customSqlSegment}
+    </select>
+
+    <select id="customPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from b_order o
+        <where>
+            <if test="null != m.startTime">
+                AND
+                o.`create_time` &gt;= #{m.startTime}
+            </if>
+            <if test="null != m.endTime">
+                AND
+                o.`create_time` &lt; #{m.endTime}
+            </if>
+            <if test="null != m.matterType">
+                AND
+                o.`name` = #{m.matterType}
+            </if>
+        </where>
     </select>
 
 </mapper>

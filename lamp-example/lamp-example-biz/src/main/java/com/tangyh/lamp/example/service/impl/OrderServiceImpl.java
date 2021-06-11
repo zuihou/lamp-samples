@@ -3,12 +3,14 @@ package com.tangyh.lamp.example.service.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tangyh.basic.annotation.echo.EchoResult;
+import com.tangyh.basic.base.request.PageParams;
 import com.tangyh.basic.base.service.SuperCacheServiceImpl;
 import com.tangyh.basic.cache.model.CacheKeyBuilder;
 import com.tangyh.basic.database.mybatis.auth.DataScope;
 import com.tangyh.basic.database.mybatis.conditions.Wraps;
 import com.tangyh.basic.echo.properties.EchoProperties;
 import com.tangyh.lamp.example.dao.OrderMapper;
+import com.tangyh.lamp.example.dto.MatterInOutSumFormBean;
 import com.tangyh.lamp.example.entity.Order;
 import com.tangyh.lamp.example.service.OrderService;
 import lombok.AllArgsConstructor;
@@ -109,5 +111,11 @@ public class OrderServiceImpl extends SuperCacheServiceImpl<OrderMapper, Order> 
         int a = 1 / 0;
         log.info("a={}", a);
         return true;
+    }
+
+    @Override
+    public IPage<Order> customPage(PageParams<MatterInOutSumFormBean> data) {
+        IPage<Order> page = data.buildPage();
+        return baseMapper.customPage(page, data.getModel());
     }
 }

@@ -7,6 +7,7 @@ import com.tangyh.basic.base.request.PageParams;
 import com.tangyh.basic.database.mybatis.conditions.Wraps;
 import com.tangyh.basic.database.mybatis.conditions.query.LbqWrapper;
 import com.tangyh.basic.echo.core.EchoService;
+import com.tangyh.lamp.example.dto.MatterInOutSumFormBean;
 import com.tangyh.lamp.example.entity.Order;
 import com.tangyh.lamp.example.service.OrderService;
 import io.swagger.annotations.Api;
@@ -177,6 +178,11 @@ public class MapperController {
     public R dataScope(@RequestBody PageParams<Order> data) {
         LbqWrapper<Order> wraps = Wraps.<Order>lbQ(data.getModel());
         return R.success(orderService.findPage(data.buildPage(), wraps));
+    }
+
+    @PostMapping("/customPage")
+    public R customPage(@RequestBody PageParams<MatterInOutSumFormBean> data) {
+        return R.success(orderService.customPage(data));
     }
 
 

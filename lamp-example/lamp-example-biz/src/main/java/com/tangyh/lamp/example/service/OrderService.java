@@ -2,7 +2,9 @@ package com.tangyh.lamp.example.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.tangyh.basic.base.request.PageParams;
 import com.tangyh.basic.base.service.SuperCacheService;
+import com.tangyh.lamp.example.dto.MatterInOutSumFormBean;
 import com.tangyh.lamp.example.entity.Order;
 
 import java.util.List;
@@ -27,4 +29,6 @@ public interface OrderService extends SuperCacheService<Order> {
     boolean save1(Order order);
 
     boolean save2(Order order);
+
+    IPage<Order> customPage(PageParams<MatterInOutSumFormBean> data);
 }

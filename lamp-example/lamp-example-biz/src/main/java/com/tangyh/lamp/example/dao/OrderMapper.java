@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.tangyh.basic.base.mapper.SuperMapper;
 import com.tangyh.basic.database.mybatis.auth.DataScope;
+import com.tangyh.lamp.example.dto.MatterInOutSumFormBean;
 import com.tangyh.lamp.example.entity.Order;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -27,4 +28,6 @@ public interface OrderMapper extends SuperMapper<Order> {
 
 
     IPage<Order> findPage(IPage page, @Param(Constants.WRAPPER) Wrapper<Order> wrapper, DataScope dataScope);
+
+    IPage<Order> customPage(IPage<Order> page, @Param("m") MatterInOutSumFormBean model);
 }

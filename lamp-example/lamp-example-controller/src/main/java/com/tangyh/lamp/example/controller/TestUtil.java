@@ -21,15 +21,12 @@ public class TestUtil {
 
     @Autowired
     DemoTest123Api demoTestApi;
-
     public R<Product> test(Product data) {
         return demoTestApi.save(data);
     }
-
     public R<String> test2(String key) {
         return demoTestApi.get(key);
     }
-
     @FeignClient(name = "${lamp.feign.demo-server:lamp-demo-server}", path = "/seata", fallback = DemoTest123ApiImpl.class)
     interface DemoTest123Api {
         /**
@@ -40,7 +37,6 @@ public class TestUtil {
          */
         @PostMapping("/saveEx")
         R<Product> saveEx(@RequestBody Product data);
-
         /**
          * 新增
          *
@@ -49,11 +45,9 @@ public class TestUtil {
          */
         @PostMapping("/save")
         R<Product> save(@RequestBody Product data);
-
         @GetMapping("/get/{key}")
         R<String> get(@PathVariable("key") String key);
     }
-
     @Component
     static class DemoTest123ApiImpl implements DemoTest123Api {
         @Override
@@ -65,7 +59,6 @@ public class TestUtil {
         public R<Product> save(Product data) {
             return R.timeout();
         }
-
         @Override
         public R<String> get(String key) {
             return R.timeout();
