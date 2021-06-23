@@ -23,6 +23,7 @@ import static com.tangyh.lamp.common.constant.BizConstant.UTIL_PACKAGE;
  *
  * @author zuihou
  */
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
 @ComponentScan({
