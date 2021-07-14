@@ -17,7 +17,6 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 import static com.tangyh.lamp.common.constant.EchoConstants.DICTIONARY_ITEM_FEIGN_CLASS;
-import static com.tangyh.lamp.common.constant.EchoConstants.FIND_NAME_BY_IDS;
 import static com.tangyh.lamp.common.constant.EchoConstants.ORG_ID_FEIGN_CLASS;
 
 /**
@@ -50,29 +49,29 @@ public class OrderPageDTO implements Serializable {
     /**
      * 学历
      *
-     * @Echo(api = "orderServiceImpl", method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>
+     * @Echo(api = "orderServiceImpl", dictType = DictionaryType.EDUCATION) RemoteData<String, String>
      */
     @ApiModelProperty(value = "学历")
     @Size(max = 255, message = "学历长度不能超过255")
-    @Echo(api = "orderServiceImpl", method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+    @Echo(api = "orderServiceImpl", dictType = DictionaryType.EDUCATION)
     private RemoteData<String, String> education;
     /**
      * 民族
      *
-     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.NATION) RemoteData<String, String>
+     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.NATION) RemoteData<String, String>
      */
     @ApiModelProperty(value = "民族")
     @Size(max = 255, message = "民族长度不能超过255")
-    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.NATION)
+    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.NATION)
     private RemoteData<String, String> nation;
     /**
      * 组织ID
      * #c_org
      *
-     * @Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS) RemoteData<Long, String>
+     * @Echo(api = ORG_ID_FEIGN_CLASS) RemoteData<Long, String>
      */
     @ApiModelProperty(value = "组织ID")
-    @Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = ORG_ID_FEIGN_CLASS)
     private RemoteData<Long, String> org;
     /**
      * 编号

@@ -27,7 +27,6 @@ import java.time.LocalDateTime;
 import static com.baomidou.mybatisplus.annotation.SqlCondition.LIKE;
 import static com.tangyh.basic.utils.DateUtils.DEFAULT_DATE_TIME_FORMAT;
 import static com.tangyh.lamp.common.constant.EchoConstants.DICTIONARY_ITEM_FEIGN_CLASS;
-import static com.tangyh.lamp.common.constant.EchoConstants.FIND_NAME_BY_IDS;
 import static com.tangyh.lamp.common.constant.EchoConstants.ORG_ID_FEIGN_CLASS;
 import static com.tangyh.lamp.common.constant.EchoConstants.USER_ID_FEIGN_CLASS;
 
@@ -90,12 +89,12 @@ public class Product extends Entity<Long> {
     /**
      * 学历
      *
-     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>
+     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>
      */
     @ApiModelProperty(value = "学历")
     @Size(max = 255, message = "学历长度不能超过255")
     @TableField(value = "type3", condition = LIKE)
-    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION)
     @ExcelEntity
     @Excel(name = "学历")
     private RemoteData<String, String> type3;
@@ -160,12 +159,12 @@ public class Product extends Entity<Long> {
     /**
      * 测试字段
      *
-     * @Echo(api = "userApi", method = FIND_NAME_BY_IDS) RemoteData<Long, String>
+     * @Echo(api = "userApi") RemoteData<Long, String>
      */
     @ApiModelProperty(value = "测试字段")
     @Size(max = 10, message = "测试字段长度不能超过10")
     @TableField(value = "test7", condition = LIKE)
-    @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = USER_ID_FEIGN_CLASS)
     @ExcelEntity
     @Excel(name = "测试字段")
     private RemoteData<Long, String> test7;
@@ -173,11 +172,11 @@ public class Product extends Entity<Long> {
     /**
      * 用户
      *
-     * @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS) RemoteData<Long, String>
+     * @Echo(api = USER_ID_FEIGN_CLASS) RemoteData<Long, String>
      */
     @ApiModelProperty(value = "用户")
     @TableField("user_id")
-    @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = USER_ID_FEIGN_CLASS)
     @ExcelEntity
     @Excel(name = "用户")
     private RemoteData<Long, String> user;
@@ -185,11 +184,11 @@ public class Product extends Entity<Long> {
     /**
      * 组织
      *
-     * @Echo(api = ORG_ID_FEIGN_CLASS, method = "findOrgNameByIds") RemoteData<Long, String>
+     * @Echo(api = ORG_ID_FEIGN_CLASS) RemoteData<Long, String>
      */
     @ApiModelProperty(value = "组织")
     @TableField("org_id")
-    @Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = ORG_ID_FEIGN_CLASS)
     @ExcelEntity
     @Excel(name = "组织")
     private RemoteData<Long, String> org;

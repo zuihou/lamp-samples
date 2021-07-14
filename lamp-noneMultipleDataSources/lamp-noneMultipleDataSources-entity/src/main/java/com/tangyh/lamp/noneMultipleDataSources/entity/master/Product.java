@@ -1,28 +1,16 @@
 package com.tangyh.lamp.noneMultipleDataSources.entity.master;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
-import cn.afterturn.easypoi.excel.annotation.ExcelEntity;
-import com.tangyh.basic.annotation.echo.Echo;
-import java.time.LocalDateTime;
-import static com.tangyh.lamp.common.constant.EchoConstants.USER_ID_FEIGN_CLASS;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.tangyh.basic.model.RemoteData;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import java.time.LocalDate;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.tangyh.basic.annotation.echo.Echo;
 import com.tangyh.basic.base.entity.Entity;
-import static com.tangyh.lamp.common.constant.EchoConstants.FIND_NAME_BY_IDS;
-import static com.tangyh.lamp.common.constant.EchoConstants.DICTIONARY_ITEM_FEIGN_CLASS;
-import static com.tangyh.lamp.common.constant.EchoConstants.ORG_ID_FEIGN_CLASS;
+import com.tangyh.basic.model.EchoVO;
+import com.tangyh.lamp.common.constant.DictionaryType;
+import com.tangyh.lamp.noneMultipleDataSources.enumeration.master.ProductType;
+import com.tangyh.lamp.noneMultipleDataSources.enumeration.master.ProductType2Enum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,13 +18,20 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import com.tangyh.lamp.common.constant.DictionaryType;
-import static com.tangyh.basic.utils.DateUtils.DEFAULT_DATE_TIME_FORMAT;
-import com.tangyh.basic.model.EchoVO;
-import com.tangyh.lamp.noneMultipleDataSources.enumeration.master.ProductType;
-import com.tangyh.lamp.noneMultipleDataSources.enumeration.master.ProductType2Enum;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.baomidou.mybatisplus.annotation.SqlCondition.LIKE;
+import static com.tangyh.basic.utils.DateUtils.DEFAULT_DATE_TIME_FORMAT;
+import static com.tangyh.lamp.common.constant.EchoConstants.DICTIONARY_ITEM_FEIGN_CLASS;
+import static com.tangyh.lamp.common.constant.EchoConstants.ORG_ID_FEIGN_CLASS;
+import static com.tangyh.lamp.common.constant.EchoConstants.USER_ID_FEIGN_CLASS;
 
 /**
  * <p>
@@ -80,7 +75,7 @@ public class Product extends Entity<Long> implements EchoVO {
     private Integer stock;
 
     /**
-     * 商品类型 
+     * 商品类型
      * #ProductType{ordinary:普通;gift:赠品}
      */
     @ApiModelProperty(value = "商品类型")
@@ -89,7 +84,7 @@ public class Product extends Entity<Long> implements EchoVO {
     private ProductType type;
 
     /**
-     * 商品类型2 
+     * 商品类型2
      * #{ordinary:普通;gift:赠品;}
      */
     @ApiModelProperty(value = "商品类型2")
@@ -98,13 +93,14 @@ public class Product extends Entity<Long> implements EchoVO {
     private ProductType2Enum type2;
 
     /**
-     * 学历 
-     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+     * 学历
+     *
+     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION)
      */
     @ApiModelProperty(value = "学历")
     @Size(max = 255, message = "学历长度不能超过255")
     @TableField(value = "type3", condition = LIKE)
-    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION)
     @Excel(name = "学历")
     private String type3;
 
@@ -166,7 +162,7 @@ public class Product extends Entity<Long> implements EchoVO {
     private Integer sortValue;
 
     /**
-     * 测试字段 
+     * 测试字段
      * @InjectionField(api = "userApi", method = USER_ID_NAME_METHOD) RemoteData<Long, String>
      */
     @ApiModelProperty(value = "测试字段")
@@ -176,31 +172,31 @@ public class Product extends Entity<Long> implements EchoVO {
     private String test7;
 
     /**
-     * 用户 
-     * @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+     * 用户
+     * @Echo(api = USER_ID_FEIGN_CLASS)
      */
     @ApiModelProperty(value = "用户")
     @TableField("user_id")
-    @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = USER_ID_FEIGN_CLASS)
     @Excel(name = "用户")
     private Long userId;
 
     /**
-     * 组织 
-     * @Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+     * 组织
+     * @Echo(api = ORG_ID_FEIGN_CLASS)
      */
     @ApiModelProperty(value = "组织")
     @TableField("org_id")
-    @Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = ORG_ID_FEIGN_CLASS)
     @Excel(name = "组织")
     private Long orgId;
 
 
     @Builder
-    public Product(Long id, LocalDateTime createTime, Long createdBy, LocalDateTime updateTime, Long updatedBy, 
-                    String name, Integer stock, ProductType type, ProductType2Enum type2, String type3, 
-                    Boolean state, Integer test4, LocalDate test5, LocalDateTime test6, Long parentId, String label, 
-                    Integer sortValue, String test7, Long userId, Long orgId) {
+    public Product(Long id, LocalDateTime createTime, Long createdBy, LocalDateTime updateTime, Long updatedBy,
+                   String name, Integer stock, ProductType type, ProductType2Enum type2, String type3,
+                   Boolean state, Integer test4, LocalDate test5, LocalDateTime test6, Long parentId, String label,
+                   Integer sortValue, String test7, Long userId, Long orgId) {
         this.id = id;
         this.createTime = createTime;
         this.createdBy = createdBy;

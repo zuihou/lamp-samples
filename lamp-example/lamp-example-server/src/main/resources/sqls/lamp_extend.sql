@@ -6,9 +6,9 @@ DROP TABLE IF EXISTS `b_order`;
 CREATE TABLE `b_order`(
                           `id`          bigint(20) NOT NULL COMMENT 'ID',
                           `name`        varchar(255) DEFAULT NULL COMMENT '名称',
-                          `education`   varchar(255) DEFAULT NULL COMMENT '学历 \n@Echo(api = "orderServiceImpl", method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>',
-                          `nation`      varchar(255) DEFAULT NULL COMMENT '民族 \n@Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.NATION) RemoteData<String, String>',
-                          `org_id`      bigint(20) DEFAULT NULL COMMENT '组织ID \n#c_org@Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS) RemoteData<Long, String>',
+                          `education`   varchar(255) DEFAULT NULL COMMENT '学历 \n@Echo(api = "orderServiceImpl", dictType = DictionaryType.EDUCATION) RemoteData<String, String>',
+                          `nation`      varchar(255) DEFAULT NULL COMMENT '民族 \n@Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.NATION) RemoteData<String, String>',
+                          `org_id`      bigint(20) DEFAULT NULL COMMENT '组织ID \n#c_org@Echo(api = ORG_ID_FEIGN_CLASS) RemoteData<Long, String>',
                           `code`        varchar(255) DEFAULT NULL COMMENT '编号',
                           `create_time` datetime     DEFAULT NULL COMMENT '创建时间',
                           `created_by`  bigint(20) DEFAULT NULL COMMENT '创建人',

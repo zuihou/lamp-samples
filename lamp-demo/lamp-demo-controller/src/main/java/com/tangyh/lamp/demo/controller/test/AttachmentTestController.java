@@ -2,7 +2,7 @@ package com.tangyh.lamp.demo.controller.test;
 
 import com.tangyh.basic.base.R;
 import com.tangyh.lamp.file.api.AttachmentApi;
-import com.tangyh.lamp.file.dto.AttachmentDTO;
+import com.tangyh.lamp.file.entity.Attachment;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -50,7 +50,7 @@ public class AttachmentTestController {
             @ApiImplicitParam(name = "file", value = "附件", dataType = DATA_TYPE_MULTIPART_FILE, allowMultiple = true, required = true),
     })
     @PostMapping(value = "/upload")
-    public R<AttachmentDTO> upload(
+    public R<Attachment> upload(
             @RequestParam(value = "file") MultipartFile file,
             @RequestParam(value = "isSingle", required = false, defaultValue = "false") Boolean isSingle,
             @RequestParam(value = "id", required = false) Long id,

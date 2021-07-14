@@ -20,7 +20,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static com.tangyh.lamp.common.constant.EchoConstants.DICTIONARY_ITEM_FEIGN_CLASS;
-import static com.tangyh.lamp.common.constant.EchoConstants.FIND_NAME_BY_IDS;
 import static com.tangyh.lamp.common.constant.EchoConstants.ORG_ID_FEIGN_CLASS;
 import static com.tangyh.lamp.common.constant.EchoConstants.USER_ID_FEIGN_CLASS;
 
@@ -70,10 +69,10 @@ public class ProductPageQuery implements Serializable {
     /**
      * 学历
      *
-     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>
+     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>
      */
     @ApiModelProperty(value = "学历")
-    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION)
     private RemoteData<String, String> type3;
     /**
      * 状态
@@ -113,26 +112,26 @@ public class ProductPageQuery implements Serializable {
     /**
      * 测试字段
      *
-     * @Echo(api = "userApi", method = FIND_NAME_BY_IDS) RemoteData<Long, String>
+     * @Echo(api = "userApi") RemoteData<Long, String>
      */
     @ApiModelProperty(value = "测试字段")
-    @Echo(api = "userApi", method = FIND_NAME_BY_IDS)
+    @Echo(api = "userApi")
     private RemoteData<Long, String> test7;
     /**
      * 用户
      *
-     * @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS) RemoteData<Long, String>
+     * @Echo(api = USER_ID_FEIGN_CLASS) RemoteData<Long, String>
      */
     @ApiModelProperty(value = "用户")
-    @Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = USER_ID_FEIGN_CLASS)
     private RemoteData<Long, String> user;
     /**
      * 组织
      *
-     * @Echo(api = ORG_ID_FEIGN_CLASS, method = "findOrgNameByIds") RemoteData<Long, String>
+     * @Echo(api = ORG_ID_FEIGN_CLASS) RemoteData<Long, String>
      */
     @ApiModelProperty(value = "组织")
-    @Echo(api = ORG_ID_FEIGN_CLASS, method = "findOrgNameByIds")
+    @Echo(api = ORG_ID_FEIGN_CLASS)
     private RemoteData<Long, String> org;
 
 }

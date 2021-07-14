@@ -24,7 +24,6 @@ import java.util.Map;
 
 import static com.baomidou.mybatisplus.annotation.SqlCondition.LIKE;
 import static com.tangyh.lamp.common.constant.EchoConstants.DICTIONARY_ITEM_FEIGN_CLASS;
-import static com.tangyh.lamp.common.constant.EchoConstants.FIND_NAME_BY_IDS;
 import static com.tangyh.lamp.common.constant.EchoConstants.ORG_ID_FEIGN_CLASS;
 
 /**
@@ -60,33 +59,34 @@ public class Order extends Entity<Long> implements EchoVO {
 
     /**
      * 学历
-     * @Echo(api = "orderServiceImpl", method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+     *
+     * @Echo(api = "orderServiceImpl", dictType = DictionaryType.EDUCATION)
      */
     @ApiModelProperty(value = "学历")
     @Size(max = 255, message = "学历长度不能超过255")
     @TableField(value = "education", condition = LIKE)
-    @Echo(api = "orderServiceImpl", method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION)
+    @Echo(api = "orderServiceImpl", dictType = DictionaryType.EDUCATION)
     @Excel(name = "学历")
     private String education;
 
     /**
      * 民族
-     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.NATION)
+     * @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.NATION)
      */
     @ApiModelProperty(value = "民族")
     @Size(max = 255, message = "民族长度不能超过255")
     @TableField(value = "nation", condition = LIKE)
-    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.NATION)
+    @Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.NATION)
     @Excel(name = "民族")
     private String nation;
 
     /**
      * 组织ID
-     * #c_org@Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+     * #c_org@Echo(api = ORG_ID_FEIGN_CLASS)
      */
     @ApiModelProperty(value = "组织ID")
     @TableField("org_id")
-    @Echo(api = ORG_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS)
+    @Echo(api = ORG_ID_FEIGN_CLASS)
     @Excel(name = "组织ID")
     private Long orgId;
 

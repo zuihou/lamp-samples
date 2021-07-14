@@ -30,7 +30,7 @@ CREATE TABLE `b_product`(
                             `updated_by`  bigint(20) DEFAULT NULL COMMENT '修改人',
                             `type_`       text COMMENT '商品类型 \n#ProductType{ordinary:普通;gift:赠品}',
                             `type2`       longtext COMMENT '商品类型2 \n#{ordinary:普通;gift:赠品;}',
-                            `type3`       varchar(255) DEFAULT NULL COMMENT '学历 \n@Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, method = FIND_NAME_BY_IDS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>',
+                            `type3`       varchar(255) DEFAULT NULL COMMENT '学历 \n@Echo(api = DICTIONARY_ITEM_FEIGN_CLASS, dictType = DictionaryType.EDUCATION) RemoteData<String, String>',
                             `state`       bit(1)       DEFAULT NULL COMMENT '状态',
                             `test4`       tinyint(3) DEFAULT NULL COMMENT '测试',
                             `test5`       date         DEFAULT NULL COMMENT '时间',
@@ -38,9 +38,9 @@ CREATE TABLE `b_product`(
                             `parent_id`   bigint(20) DEFAULT NULL COMMENT '父id',
                             `label`       varchar(255) DEFAULT NULL COMMENT '名称',
                             `sort_value`  int(10) DEFAULT NULL COMMENT '排序',
-                            `test7`       char(10)     DEFAULT NULL COMMENT '测试字段 \n@Echo(api = "userApi", method = FIND_NAME_BY_IDS) RemoteData<Long, String>',
-                            `user_id`     bigint(20) DEFAULT NULL COMMENT '用户 \n@Echo(api = USER_ID_FEIGN_CLASS, method = FIND_NAME_BY_IDS) RemoteData<Long, String>',
-                            `org_id`      bigint(20) DEFAULT NULL COMMENT '组织 \n@Echo(api = ORG_ID_FEIGN_CLASS, method = "findOrgNameByIds") RemoteData<Long, String>',
+                            `test7`       char(10)     DEFAULT NULL COMMENT '测试字段 \n@Echo(api = "userApi") RemoteData<Long, String>',
+                            `user_id`     bigint(20) DEFAULT NULL COMMENT '用户 \n@Echo(api = USER_ID_FEIGN_CLASS) RemoteData<Long, String>',
+                            `org_id`      bigint(20) DEFAULT NULL COMMENT '组织 \n@Echo(api = ORG_ID_FEIGN_CLASS) RemoteData<Long, String>',
                             PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品';
 
