@@ -1,8 +1,9 @@
 package com.tangyh.lamp.demo.controller.test;
 
 import com.tangyh.basic.base.R;
-import com.tangyh.lamp.file.api.AttachmentApi;
-import com.tangyh.lamp.file.entity.Attachment;
+import com.tangyh.lamp.file.api.FileApi;
+import com.tangyh.lamp.file.enumeration.FileStorageType;
+import com.tangyh.lamp.file.vo.result.FileResultVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -33,7 +34,7 @@ import static com.tangyh.lamp.common.constant.SwaggerConstants.PARAM_TYPE_QUERY;
 @RequiredArgsConstructor
 public class AttachmentTestController {
 
-    private final AttachmentApi attachmentApi;
+    private final FileApi attachmentApi;
 
     /**
      * 上传文件
@@ -50,12 +51,12 @@ public class AttachmentTestController {
             @ApiImplicitParam(name = "file", value = "附件", dataType = DATA_TYPE_MULTIPART_FILE, allowMultiple = true, required = true),
     })
     @PostMapping(value = "/upload")
-    public R<Attachment> upload(
+    public R<FileResultVO> upload(
             @RequestParam(value = "file") MultipartFile file,
-            @RequestParam(value = "isSingle", required = false, defaultValue = "false") Boolean isSingle,
-            @RequestParam(value = "id", required = false) Long id,
-            @RequestParam(value = "bizId", required = false) String bizId,
-            @RequestParam(value = "bizType", required = false) String bizType) {
-        return attachmentApi.upload(file, isSingle, id, bizId, bizType);
+            @RequestParam("bizType") String bizType,
+            @RequestParam(value = "bucket", required = false) String bucket,
+            @RequestParam(value = "storageType", required = false) FileStorageType storageType
+    ) {
+        return attachmentApi.upload(file, bizType, bucket, storageType);
     }
 }
