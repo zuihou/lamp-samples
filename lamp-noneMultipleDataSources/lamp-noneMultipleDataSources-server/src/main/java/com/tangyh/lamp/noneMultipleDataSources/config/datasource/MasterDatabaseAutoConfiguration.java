@@ -54,7 +54,7 @@ import java.util.List;
 @MapperScan(
         basePackages = {"com.tangyh.lamp.noneMultipleDataSources.dao.master"}, annotationClass = Repository.class,
         sqlSessionFactoryRef = MasterDatabaseAutoConfiguration.DATABASE_PREFIX + "SqlSessionFactory")
-@EnableConfigurationProperties({MybatisPlusProperties.class})
+@EnableConfigurationProperties({MybatisPlusMasterProperties.class})
 @ConditionalOnExpression("!'DATASOURCE'.equals('${lamp.database.multiTenantType}')")
 public class MasterDatabaseAutoConfiguration extends BaseDatabaseConfiguration {
     /**
