@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>lamp-example</artifactId>
-        <groupId>com.tangyh.lamp</groupId>
-        <version>3.3.0</version>
+        <groupId>top.tangyh.lamp</groupId>
+        <version>3.4.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -16,29 +16,29 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.tangyh.lamp</groupId>
+            <groupId>top.tangyh.lamp</groupId>
             <artifactId>lamp-example-biz</artifactId>
             <version>${lamp-project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.tangyh.lamp</groupId>
+            <groupId>top.tangyh.lamp</groupId>
             <artifactId>lamp-demo-entity</artifactId>
             <version>${lamp-project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.tangyh.lamp</groupId>
+            <groupId>top.tangyh.lamp</groupId>
             <artifactId>lamp-oauth-api</artifactId>
             <version>${lamp-project.version}</version>
         </dependency>
 
         <!-- 注入当前登录人信息 需要在Controller方法参数上写注解和实体类 -->
         <dependency>
-            <groupId>com.tangyh.basic</groupId>
+            <groupId>top.tangyh.basic</groupId>
             <artifactId>lamp-security-starter</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.tangyh.basic</groupId>
+            <groupId>top.tangyh.basic</groupId>
             <artifactId>lamp-jwt-starter</artifactId>
         </dependency>
 

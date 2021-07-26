@@ -4,8 +4,8 @@
           xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
 
     <mapping date-format="yyyy-MM-dd HH:mm:ss">
-        <class-a>com.tangyh.lamp.example.dto.OrderDozerTest</class-a>
-        <class-b>com.tangyh.lamp.example.dto.OrderDozerTest2</class-b>
+        <class-a>top.tangyh.lamp.example.dto.OrderDozerTest</class-a>
+        <class-b>top.tangyh.lamp.example.dto.OrderDozerTest2</class-b>
         <field>
             <a>code</a>
             <b>code2</b>

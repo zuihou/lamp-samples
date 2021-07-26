@@ -6,7 +6,7 @@
 - MasterDatabaseAutoConfiguration：第一个数据源的配置类
 ```
     // 不同点1 
-    basePackages = {"com.tangyh.lamp.noneMultipleDataSources.dao.master"}
+    basePackages = {"top.tangyh.lamp.noneMultipleDataSources.dao.master"}
     /**
      * 不同点2：每个数据源配置不同即可
      */
@@ -20,7 +20,7 @@
 - SlaveDatabaseAutoConfiguration：第二个数据源的配置类
 ```
     // 不同点1 
-    basePackages = {"com.tangyh.lamp.noneMultipleDataSources.dao.slave"}
+    basePackages = {"top.tangyh.lamp.noneMultipleDataSources.dao.slave"}
     /**
      * 不同点2：每个数据源配置不同即可
      */
@@ -49,8 +49,8 @@ mybatis-plus-slave:
   mapper-locations:
     - classpath*:mapper_**/**/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.tangyh.lamp.*.entity;com.tangyh.basic.database.mybatis.typehandler
-  typeEnumsPackage: com.tangyh.lamp.*.enumeration
+  typeAliasesPackage: top.tangyh.lamp.*.entity;top.tangyh.basic.database.mybatis.typehandler
+  typeEnumsPackage: top.tangyh.lamp.*.enumeration
   global-config:
     db-config:
       id-type: INPUT
@@ -69,8 +69,8 @@ mybatis-plus-master: # 仅仅这里不同
   mapper-locations:
     - classpath*:mapper_**/**/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.tangyh.lamp.*.entity;com.tangyh.basic.database.mybatis.typehandler
-  typeEnumsPackage: com.tangyh.lamp.*.enumeration
+  typeAliasesPackage: top.tangyh.lamp.*.entity;top.tangyh.basic.database.mybatis.typehandler
+  typeEnumsPackage: top.tangyh.lamp.*.enumeration
   global-config:
     db-config:
       id-type: INPUT

@@ -4,7 +4,7 @@ lamp:
     docket:
       noneMultipleDataSources:
         title: None模式多数据源示例服务
-        base-package: com.tangyh.lamp.noneMultipleDataSources.controller
+        base-package: top.tangyh.lamp.noneMultipleDataSources.controller
   database:
     multi-tenant-type: none
 
@@ -109,8 +109,8 @@ mybatis-plus-master:
   mapper-locations:
     - classpath*:mapper_**/**/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.tangyh.lamp.*.entity;com.tangyh.basic.database.mybatis.typehandler
-  typeEnumsPackage: com.tangyh.lamp.*.enumeration
+  typeAliasesPackage: top.tangyh.lamp.*.entity;top.tangyh.basic.database.mybatis.typehandler
+  typeEnumsPackage: top.tangyh.lamp.*.enumeration
   global-config:
     db-config:
       id-type: INPUT
@@ -129,8 +129,8 @@ mybatis-plus-slave:
   mapper-locations:
     - classpath*:mapper_**/**/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.tangyh.lamp.*.entity;com.tangyh.basic.database.mybatis.typehandler
-  typeEnumsPackage: com.tangyh.lamp.*.enumeration
+  typeAliasesPackage: top.tangyh.lamp.*.entity;top.tangyh.basic.database.mybatis.typehandler
+  typeEnumsPackage: top.tangyh.lamp.*.enumeration
   global-config:
     db-config:
       id-type: INPUT

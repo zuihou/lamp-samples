@@ -6,7 +6,7 @@ lamp:
     docket:
       demo:
         title: 演示服务
-        base-package: com.tangyh.lamp.demo.controller
+        base-package: top.tangyh.lamp.demo.controller
 
 logging:
   org.springframework.cloud.alibaba.seata.web: debug

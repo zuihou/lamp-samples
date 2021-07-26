@@ -3,7 +3,7 @@ lamp:
     isSeata: false
     tenantDatabasePrefix: lamp_extend
   swagger:
-    base-package: com.tangyh.lamp.example.controller
+    base-package: top.tangyh.lamp.example.controller
     title: 订单服务
 
 logging:
