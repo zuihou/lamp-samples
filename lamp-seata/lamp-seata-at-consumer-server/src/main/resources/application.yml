@@ -122,6 +122,7 @@ seata:
       username: ${lamp.nacos.username}
       password: ${lamp.nacos.password}
       namespace: ${lamp.seata.namespace}
+      group: SEATA_GROUP
   config:
     type: nacos
     nacos:
@@ -129,6 +130,8 @@ seata:
       username: ${lamp.nacos.username}
       password: ${lamp.nacos.password}
       namespace: ${lamp.seata.namespace}
+      data-id: seataServer.properties
+      group: SEATA_GROUP
   service:
     grouplist:
       default: ${lamp.seata.ip:127.0.0.1}:${lamp.seata.port:8091}

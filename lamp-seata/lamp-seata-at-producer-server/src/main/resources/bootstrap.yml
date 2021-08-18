@@ -24,7 +24,7 @@ spring:
             refresh: true
           - dataId: redis.yml
             refresh: false
-            # 为了方便演示，就补充mysql.yml中读取
+            # 为了方便演示，就不从mysql.yml中读取
 #          - dataId: mysql.yml
 #            refresh: true
           - dataId: rabbitmq.yml
