@@ -1,9 +1,7 @@
 package top.tangyh.lamp.example.controller.cloud;
 
 import top.tangyh.basic.base.R;
-import top.tangyh.lamp.common.enums.DateType;
-import top.tangyh.lamp.example.dto.RestTestDTO;
-import top.tangyh.lamp.example.entity.Order;
+import top.tangyh.lamp.common.enumeration.DateType;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
@@ -17,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import top.tangyh.lamp.example.dto.RestTestDTO;
+import top.tangyh.lamp.example.entity.Order;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;

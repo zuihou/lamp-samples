@@ -1,8 +1,8 @@
 package top.tangyh.lamp.demo.controller.test.model;
 
-import top.tangyh.lamp.common.enums.HttpMethod;
 import lombok.Data;
 import lombok.ToString;
+import top.tangyh.lamp.common.enumeration.HttpMethod;
 
 import java.io.Serializable;
 import java.util.List;

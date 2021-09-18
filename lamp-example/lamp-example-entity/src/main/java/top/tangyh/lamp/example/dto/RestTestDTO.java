@@ -1,6 +1,6 @@
 package top.tangyh.lamp.example.dto;
 
-import top.tangyh.lamp.common.enums.DateType;
+import top.tangyh.lamp.common.enumeration.DateType;
 import top.tangyh.lamp.example.enums.SexTest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
